@@ -42,11 +42,11 @@ public class InMemoryUserStorage implements UserStorage {
     }
 
     @Override
-    public Optional<User> getUserById(Long ID) {
-        if (isExistsUser(ID)) {
-            return Optional.of(users.get(ID));
+    public Optional<User> getUserById(Long id) {
+        if (isExistsUser(id)) {
+            return Optional.of(users.get(id));
         } else {
-            throw new ObjectNotFoundException(String.format("Пользователь не найден: id=%d", ID));
+            throw new ObjectNotFoundException(String.format("Пользователь не найден: id=%d", id));
         }
     }
 
@@ -71,17 +71,17 @@ public class InMemoryUserStorage implements UserStorage {
     }
 
     @Override
-    public List<User> getFriends(Long ID) {
-        if (isExistsUser(ID)) {
-            return users.get(ID).getFriends().stream().map(users::get).collect(Collectors.toList());
+    public List<User> getFriends(Long id) {
+        if (isExistsUser(id)) {
+            return users.get(id).getFriends().stream().map(users::get).collect(Collectors.toList());
         } else {
-            throw new ObjectNotFoundException(String.format("Пользователь не найден: id=%d", ID));
+            throw new ObjectNotFoundException(String.format("Пользователь не найден: id=%d", id));
         }
     }
 
     @Override
-    public boolean isExistsUser(Long ID) {
-        return users.containsKey(ID);
+    public boolean isExistsUser(Long id) {
+        return users.containsKey(id);
     }
 
     private Long generateID() {
