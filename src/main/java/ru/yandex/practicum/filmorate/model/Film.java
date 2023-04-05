@@ -6,10 +6,7 @@ import lombok.Data;
 import lombok.experimental.FieldDefaults;
 import ru.yandex.practicum.filmorate.annotation.IsAfterDate;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
@@ -23,6 +20,7 @@ public class Film {
 
     Long ID;
     @NotBlank
+    @Pattern(regexp = ("^[a-z]([a-zA-Z0-9]*)?$"))
     String name;
     @NotBlank
     @Size(max = 200)

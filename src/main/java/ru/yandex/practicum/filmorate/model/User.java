@@ -22,8 +22,7 @@ public class User {
 
     Long ID;
     @NotBlank
-    @Email(message = "Email address has invalid format: ${validatedValue}",
-            regexp = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$")
+    @Email(regexp = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$")
     String email;
     @NotBlank
     @Pattern(regexp = ("[A-Za-z]+(?:(?:, |-)[A-Za-z]+)*"))
