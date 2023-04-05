@@ -20,7 +20,7 @@ public class Film {
 
     Long ID;
     @NotBlank
-    @Pattern(regexp = ("^[a-z]([a-zA-Z0-9]*)?$"))
+    @Pattern(regexp = "^[a-z]([a-zA-Z0-9]*)?$")
     String name;
     @NotBlank
     @Size(max = 200)
