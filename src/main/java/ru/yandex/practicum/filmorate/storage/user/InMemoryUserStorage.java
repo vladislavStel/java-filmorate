@@ -18,20 +18,20 @@ public class InMemoryUserStorage implements UserStorage {
 
     @Override
     public User add(User user) {
-        user.setID(generateID());
-        users.put(user.getID(), user);
-        log.info("Добавлен новый пользователь: id={}", user.getID());
+        user.setId(generateID());
+        users.put(user.getId(), user);
+        log.info("Добавлен новый пользователь: id={}", user.getId());
         return user;
     }
 
     @Override
     public User update(User user) {
-        if (isExistsUser(user.getID())) {
-            users.put(user.getID(), user);
-            log.info("Данные пользователя обновлены: id={}", user.getID());
+        if (isExistsUser(user.getId())) {
+            users.put(user.getId(), user);
+            log.info("Данные пользователя обновлены: id={}", user.getId());
             return user;
         } else {
-            throw new ObjectNotFoundException(String.format("Пользователь не найден: id=%d", user.getID()));
+            throw new ObjectNotFoundException(String.format("Пользователь не найден: id=%d", user.getId()));
         }
     }
 
