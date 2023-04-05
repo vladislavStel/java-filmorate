@@ -18,7 +18,7 @@ public class User {
     final Set<Long> friends = new HashSet<>();
 
     @PositiveOrZero
-    Long ID;
+    Long id;
     @NotBlank
     @Email(regexp = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$")
     String email;
