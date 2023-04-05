@@ -18,9 +18,9 @@ public class Film {
 
     final Set<Long> likes = new HashSet<>();
 
+    @Positive
     Long ID;
     @NotBlank
-    @Pattern(regexp = "^[a-z]([a-zA-Z0-9]*)?$")
     String name;
     @NotBlank
     @Size(max = 200)
